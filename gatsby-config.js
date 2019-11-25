@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby + Netlify CMS Starter',
+    title: 'Kontist Dev Hub',
     description:
-      'This repo contains an example business website that is built with Gatsby, and Netlify CMS.It follows the JAMstack architecture by using Git as a single source of truth, and Netlify for continuous deployment, and CDN distribution.',
+      'This page is product of deveper collaboration arround modern financial product. Kontist is a technical playgroud we use to build interesting and meaningfull consumer centric fintech products.',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
