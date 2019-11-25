@@ -1,19 +1,61 @@
 ---
-templateKey: 'about-page'
-path: /about
-title: About our values
+templateKey: about-page
+title: Welcome
 ---
-### Shade-grown coffee
-Coffee is a small tree or shrub that grows in the forest understory in its wild form, and traditionally was grown commercially under other trees that provided shade. The forest-like structure of shade coffee farms provides habitat for a great number of migratory and resident species.
+ Discover all the services of our platform so that you can build or integrate your application with Kontist.
 
-### Single origin
-Single-origin coffee is coffee grown within a single known geographic origin. Sometimes, this is a single farm or a specific collection of beans from a single country. The name of the coffee is then usually the place it was grown to whatever degree available.
+## Getting started
 
-### Sustainable farming
-Sustainable agriculture is farming in sustainable ways based on an understanding of ecosystem services, the study of relationships between organisms and their environment. What grows where and how it is grown are a matter of choice and careful consideration for nature and communities.
+We provide you with a GraphQL API to e.g. fetch transactions or start new transfers.
+For exploring the API we recommend the Playground application.
+When you are ready for implementation you first need to register your own application with us as an OAuth2 client. 
 
-### Direct sourcing
-Direct trade is a form of sourcing practiced by some coffee roasters. Advocates of direct trade practices promote direct communication and price negotiation between buyer and farmer, along with systems that encourage and incentivize quality.
+Then you can use your application to create an access token to access Kontist on behalf of a user. With that access token you can then make requests to our /api/graphql endpoint.
+For an easier start we provide you with our SDK.
 
-### Reinvest profits
-We want to truly empower the communities that bring amazing coffee to you. That’s why we reinvest 20% of our profits into farms, local businesses and schools everywhere our coffee is grown. You can see the communities grow and learn more about coffee farming on our blog.
+## 
+We suggest the following steps:
+
+* Open your Kontist bank account (if you do not have one yet)
+* Explore our API with the Playground
+* Read the GraphQL Docs
+* Register your own application
+* Use our SDK in your application or directly use the /api/graphql endpoint
+  Kontist SDK
+
+
+
+
+Our JavaScript SDK helps you easily connect to our services.\
+ It was developed for Node.js and the browser and contains TypeScript type definitions.\
+Just run 
+
+```
+npm install kontist 
+```
+
+to install the latest version.
+The SDK includes authentication convenience methods and provides methods for the most common use cases, e.g. creating a new transfer:
+
+```
+
+const confirmationId = await client.models.transfer.createOne({
+  amount: 1234,
+  recipient: "Johnny Cash",
+  iban: "DE07123412341234123412",
+  purpose: "test transfer",
+});
+```
+
+```
+// wait for sms
+const smsToken = "...";
+```
+
+```
+await client.models.transfer.confirmOne(confirmationId, smsToken);
+```
+
+
+GraphQL Playground
+The Playground is an interactive, in-browser application that can be used to explore the GraphQL interface we provide. You may authorize the application with the same credentials that you use for the Kontist mobile app.
